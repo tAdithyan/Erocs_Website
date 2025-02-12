@@ -5,7 +5,7 @@ styleSheet.textContent = `
     display: flex;
   }
 
-  @media (max-width: 1200px) { /* Updated from 768px */
+  @media (max-width: 1200px) {
     .navbar {
       position: fixed;
       top: 0;
@@ -22,25 +22,29 @@ styleSheet.textContent = `
       opacity: 0;
     }
     
-    /* Hamburger menu styles */
+    /* Fixed hamburger menu positioning */
     .hamburger {
       display: block;
       position: fixed;
-      top: 20px;
-      right: 20px;
+      top: 1rem;  /* Reduced from 20px */
+      right: 1rem; /* Reduced from 20px */
       z-index: 1000;
       cursor: pointer;
-      background: none;
       border: none;
+      background: transparent; /* Added for better visibility */
+      padding: 0.5rem;        /* Added padding for better touch target */
+      width: 40px;           /* Added explicit width */
+      height: 40px;          /* Added explicit height */
     }
     
     .hamburger span {
       display: block;
-      width: 30px;
-      height: 3px;
-      margin: 6px auto;
+      width: 25px;           /* Slightly reduced from 30px */
+      height: 2px;           /* Slightly reduced from 3px */
+      margin: 5px auto;      /* Reduced from 6px */
       background: white;
       transition: all 0.3s ease-in-out;
+      background: rgba(255, 255, 255, 0.9);
     }
 
     /* Cross Icon when active */
@@ -112,6 +116,13 @@ window.addEventListener('resize', () => {
 
 
 
+
+const marqueeContent = document.querySelector('.marquee-content');
+const clone = marqueeContent.cloneNode(true);
+document.querySelector('.marquee').appendChild(clone);
+
+
+
 // Update function to handle click and submit events
 
 
@@ -132,4 +143,14 @@ function sendEmail(){
     error => alert("Failed to send message: " + error)
     );
     }
+    
+
+
+
+
+
+
+
+    
+
     
