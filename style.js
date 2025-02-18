@@ -49,7 +49,7 @@ styleSheet.textContent = `
 
     /* Cross Icon when active */
     .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+      transform: rotate(45deg) translate(-5px, -5px);
     }
 
     .hamburger.active span:nth-child(2) {
@@ -151,6 +151,28 @@ function sendEmail(){
 
 
 
-    
+    function toggleSection(id) {
+      const section = document.getElementById(`section-${id}`);
+      const icon = section.previousElementSibling.querySelector('.toggle-icon');
+  
+      if (section.style.maxHeight) {
+          section.style.maxHeight = null;
+          section.style.opacity = "0";
+          icon.textContent = "+";
+      } else {
+          document.querySelectorAll(".service-content").forEach(content => {
+              content.style.maxHeight = null;
+              content.style.opacity = "0";
+          });
+          document.querySelectorAll(".toggle-icon").forEach(icon => {
+              icon.textContent = "+";
+          });
+  
+          section.style.maxHeight = section.scrollHeight + "px";
+          section.style.opacity = "1";
+          icon.textContent = "-";
+      }
+  }
+  
 
     

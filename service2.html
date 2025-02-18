@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EROCS - Advanced Educational Robotics Projects</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --primary: #B4EDE6;
+            --secondary: #FF5757;
+            --dark: #1A1A1A;
+            --light: #FFFFFF;
+            --gray: #333333;
+            --accent: #50C878;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background: linear-gradient(45deg, rgba(0,163,255,0.1), rgba(80,200,120,0.1)); */
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/api/placeholder/1920/1080') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--light);
+            margin-bottom: 2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 5%;
+            position: relative;
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,163,255,0.1);
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: #CCC;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(0,163,255,0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(45deg, rgba(0,163,255,0.05), rgba(80,200,120,0.05));
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: var(--light);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0,163,255,0.3);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbarDiv">
+  
+     <a href="/">  <img src="./image/finallogo__1_-removebg.png" alt="Logo" class="logo" id="logo-container-mobile"></a>
+        
+      <nav class="navbar">
+          <div class="logo-container">
+            <a href="/"> <img src="./image/finallogo__1_-removebg.png" alt="Logo" class="logo"></a>
+             
+          </div> 
+          <div class="nav-links" >
+              <a href="#Home">HOME</a>
+              <a href="#About">ABOUT</a>
+              <a href="#our-portfolio">PORTFOLIO</a>
+              <!-- <a href="#contact">BLOG</a> -->
+              <a href="#services">SERVICES</a>
+              <a href="#contact">CONTACT US</a>
+              <!-- <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-cart-shopping"></i> -->
+            
+  
+  
+          </div>
+          <div class="getintouch">
+              <a href="#contact">Get In Touch</a>
+          </div>
+      </nav>
+  </div>
+      </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Advanced Robotics for Smart Manufacturing</h1>
+            <p class="subtitle">Enhance efficiency, precision, and automation with EROCS' cutting-edge robotics solutions designed for modern industries.</p>
+        </div>
+    </section>
+
+    <div class="projects-grid">
+        <div class="project-card">
+            <h3>Industrial Articulated Robots</h3>
+            <p>Multi-jointed robotic arms for assembly, welding, material handling, and precision manufacturing, ensuring high-speed and accurate operations.</p>
+            <div class="tech-tags">
+                <span class="tech-tag">assembly</span>
+                <span class="tech-tag">welding</span>
+                <span class="tech-tag">material handling</span>
+                <span class="tech-tag">precision manufacturing</span>
+
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Automated Guided Vehicles (AGVs)</h3>
+            <p>Self-driving robotic carts that optimize material transport, reducing labor costs and enhancing logistics in manufacturing facilities..</p>
+            <div class="tech-tags">
+                <span class="tech-tag">optimize material transport</span>
+                <span class="tech-tag">reducing labor costs</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Collaborative Robots (Cobots)</h3>
+            <p>Safe, intelligent robots designed to work alongside human operators, improving productivity while ensuring workplace safety..</p>
+            <div class="tech-tags">
+                <span class="tech-tag">work alongside human operators,</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Robotic Vision Systems</h3>
+            <p>AI-powered camera systems for real-time inspection, quality control, and defect detection, enhancing manufacturing accuracy.</p>
+            <div class="tech-tags">
+                <span class="tech-tag">Real-time inspection</span>
+                <span class="tech-tag">Quality control</span>
+                <span class="tech-tag">Defect detection</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>AI-Powered Predictive Maintenance Robots</h3>
+            <p>Smart robotics integrated with AI to monitor equipment health, predict failures, and optimize maintenance schedules, minimizing downtime.</p>
+            <div class="tech-tags">
+                <span class="tech-tag">monitor equipment health</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Flexible Robotic Automation Systems</h3>
+            <p>Customizable and adaptable robots that seamlessly integrate into dynamic production lines, ensuring scalability and efficiency.</p>
+            <div class="tech-tags">
+                <span class="tech-tag">Control Theory</span>
+                <span class="tech-tag">Sensors</span>
+                <span class="tech-tag">Real-time Systems</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>AI-Driven Industrial Robotic Arm</h3>
+            <p>Program a robotic arm with machine learning to optimize automation and precision tasks.</p>
+            <div class="tech-tags">
+                <span class="tech-tag">Machine Learning</span>
+                <span class="tech-tag">Industrial Automation</span>
+                <span class="tech-tag">Precision Control</span>
+            </div>
+        </div>
+    </div>
+
+ 
+    <footer class="footer">
+        <div class="footer-box">
+            <div class="footer-section" data-aos="zoom-out-left">
+                <h3>Who We Are</h3>
+                <div class="underline" data-aos="fade-up"></div>
+                <p>EROCS is a robotics and AI-driven company dedicated to innovation, automation, and education.We develop cutting-edge robotics solutions and empower businesses and learners with advanced technology to shape a smarter future</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61572997001606" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://youtube.com/@erocssolutionsmarketing?si=hiEmfk7pV6cWvLDJ" aria-label="YouTube"><i class="fab fa-youtube"></i></a>  
+                    <a href="https://www.instagram.com/erocs_solutions/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        
+    
+            <div class="footer-section"data-aos="zoom-out-left">
+                <h3>Quick Links</h3>
+                <div class="underline" data-aos="fade-up"></div>
+                <ul>
+                    <li><a href="#">About EROCS</a></li>
+                    <li><a href="#">Our Blog</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section" data-aos="zoom-out-left">
+                <h3>Services</h3>
+                <div class="underline" data-aos="fade-up"></div>
+                <ul>
+                    <li><a href="#">Pricing Plans</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Our FAQs</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+    
+            </div>
+    
+            <div class="footer-section" data-aos="zoom-out-left" id="footer">
+                <h3>Newsletter</h3>
+                <div class="underline" data-aos="fade-up"></div>
+                <p>Stay Updated with our latest news and special offers.</p>
+            
+                <form id="emailForm" class="newsletter-box">
+                    <input type="email" id="connect-email" name="email" placeholder="Enter your email" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            
+                <p id="responseMessage"></p>
+            </div>
+        </div>
+    
+    </footer>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate project cards on scroll
+        gsap.utils.toArray('.project-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top bottom-=100',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                y: 50,
+                duration: 0.8,
+                delay: i * 0.1
+            });
+        });
+    </script>
+  <script src="https://kit.fontawesome.com/4c43e25cfd.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./style.js"></script>
+  <script>
+AOS.init();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      // Initialize EmailJS
+      emailjs.init("_HPtuHkiBX2kjCeDB");
+
+      document.getElementById("emailForm").addEventListener("submit", function(event) {
+          event.preventDefault();
+
+          const serviceID = "service_tmyh2sc";
+          const templateID = "template_vjrmi8n";
+
+          const params = {
+              email: document.getElementById("connect-email").value,
+          };
+          emailjs.send(serviceID, templateID, params)
+              .then(response => {
+                  document.getElementById("responseMessage").innerText = "✅ Email sent successfully! We will connect shortly. Please check your inbox  If you don’t see the email, please check your spam folder also.";
+                  document.getElementById("emailForm").reset();
+              })
+              .catch(error => {
+                  document.getElementById("responseMessage").innerText = "❌ Failed to send email. Please try again.";
+                  console.error("Error:", error);
+              });
+              ///replay messege
+
+              replay_templateID = "template_kpl5quq";
+              emailjs.send(serviceID, replay_templateID, params)
+              .then(response => {
+                  // document.getElementById("responseMessage").innerText = "✅ Email sent successfully!";
+                  document.getElementById("emailForm").reset();
+              })
+              .catch(error => {
+                  // document.getElementById("responseMessage").innerText = "❌ Failed to send email. Please try again.";
+                  console.error("Error:", error);
+              });
+      });
+  });
+</script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="./style.js"></script>
+</body>
+</html>
