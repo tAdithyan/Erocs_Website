@@ -77,7 +77,7 @@ body {
 }
 
 .logo {
-    width: 150px;
+    width: 300px;
     animation: spin 5s linear infinite, scaleUp 2s ease-in-out infinite alternate;
     
 }
@@ -2221,6 +2221,9 @@ justify-content: spq;
         margin-top: 20px;
         margin-bottom: 20px;
     }
+    .backbtn{
+        display: none;
+    }
 }
 
 .container122 {
@@ -2262,7 +2265,15 @@ text-decoration: underline;
 
 
 
-
+.backbtn{
+    text-decoration: none; 
+    color:#B4EDE6;
+    padding: 2rem;
+    font-size: 4rem;
+    margin-top: 3rem;
+    
+    
+}
 
 
 
