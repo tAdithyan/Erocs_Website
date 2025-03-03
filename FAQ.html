@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        .container122 {
+            /* max-width: 1200px; */
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .faq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .faq-title {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .faq-subtitle {
+            font-size: 14px;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+        
+        .intro-text {
+            font-size: 16px;
+            max-width: 50%;
+        }
+        
+        .talk-btn {
+            background-color: #6a43ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .talk-btn:hover {
+            background-color: #5332e6;
+        }
+        
+        .faq-container {
+            margin-top: 20px;
+        }
+        
+        .faq-item {
+            background-color: #2a2a2a;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .faq-question:hover {
+            background-color: #333;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 300px;
+        }
+        
+        .icon {
+            width: 20px;
+            height: 20px;
+            position: relative;
+        }
+        
+        .icon::before, .icon::after {
+            content: '';
+            position: absolute;
+            background-color: white;
+            border-radius: 1px;
+            transition: transform 0.3s ease;
+        }
+        
+        .icon::before {
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .icon::after {
+            width: 2px;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .faq-item.active .icon::after {
+            transform: translateX(-50%) rotate(90deg);
+        }
+        
+        @media (max-width: 768px) {
+            .faq-header {
+                flex-direction: column;
+            }
+            
+            .intro-text {
+                max-width: 100%;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container122">
+        <div class="faq-header">
+            <div>
+                <h1 class="faq-title">Frequently Asked Questions</h1>
+                <!-- <p class="faq-subtitle">Still have Questions?</p>
+                <button class="talk-btn">Let's Talk</button> -->
+            </div>
+            <div class="intro-text">
+                <p>Here, we've compiled a list of FAQs about services that you might have and many of our clients have asked us:</p>
+            </div>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div>How can a well-designed website impact our business?</div>
+                    <div class="icon"></div>
+                </div>
+                <div class="faq-answer">
+                    <p>A well-designed website can significantly impact your business by improving user engagement, boosting Search Engine rankings, increasing conversion rates, and enhancing your brand's online credibility. It's a crucial tool for attracting and retaining customers.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div>What is the importance of UI/UX design in creating a user-friendly website or software application?</div>
+                    <div class="icon"></div>
+                </div>
+                <div class="faq-answer">
+                    <p>UI/UX design is essential for creating intuitive, accessible, and enjoyable digital experiences. Good design reduces user frustration, increases engagement, and helps users accomplish their goals efficiently. It differentiates your product in a competitive market and directly impacts user satisfaction and retention.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div>How can custom application development benefit our business?</div>
+                    <div class="icon"></div>
+                </div>
+                <div class="faq-answer">
+                    <p>Custom application development provides tailored solutions that address your specific business needs and challenges. It can streamline operations, automate workflows, integrate with existing systems, and provide competitive advantages through unique features. Unlike off-the-shelf solutions, custom applications scale with your business and adapt to changing requirements.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div>What digital marketing strategies can drive more online traffic?</div>
+                    <div class="icon"></div>
+                </div>
+                <div class="faq-answer">
+                    <p>Effective digital marketing strategies include SEO optimization, content marketing, social media campaigns, email marketing, paid advertising (PPC), influencer partnerships, and video marketing. A comprehensive approach that combines these tactics, tailored to your target audience and business goals, will drive sustainable traffic growth.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div>Why is branding important for any business or company?</div>
+                    <div class="icon"></div>
+                </div>
+                <div class="faq-answer">
+                    <p>Branding creates recognition, trust, and emotional connections with customers. It differentiates you from competitors, justifies premium pricing, guides marketing efforts, and builds customer loyalty. A strong brand identity communicates your values and promises, making your business memorable and fostering long-term relationships with customers.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div>How can blockchain technology benefit our business?</div>
+                    <div class="icon"></div>
+                </div>
+                <div class="faq-answer">
+                    <p>Blockchain technology offers enhanced security, transparency, and efficiency for businesses. It can reduce fraud, streamline supply chains, enable secure transactions without intermediaries, create immutable records, and build trust with customers. Applications include smart contracts, secure data sharing, digital identity verification, and tokenization of assets.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div>What AI applications can we integrate into our tech solutions?</div>
+                    <div class="icon"></div>
+                </div>
+                <div class="faq-answer">
+                    <p>AI applications that can enhance your tech solutions include chatbots for customer service, predictive analytics for business intelligence, recommendation systems, natural language processing for content analysis, computer vision for image recognition, process automation, fraud detection, and personalization engines. The right applications depend on your industry and specific business needs.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div>How can API integration help our business?</div>
+                    <div class="icon"></div>
+                </div>
+                <div class="faq-answer">
+                    <p>API integration connects your business systems with third-party services and platforms, enabling seamless data exchange and workflow automation. Benefits include improved efficiency, enhanced functionality, better customer experiences, access to new features without extensive development, real-time data synchronization, and the ability to create innovative combinations of services.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div>How can maintenance as a service benefit our company?</div>
+                    <div class="icon"></div>
+                </div>
+                <div class="faq-answer">
+                    <p>Maintenance as a Service ensures your digital assets remain secure, up-to-date, and optimized. Benefits include proactive issue resolution, reduced downtime, regular security updates, performance optimization, technical debt management, and predictable costs. It allows your internal team to focus on core business activities while experts handle the technical maintenance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Add click event for the "Let's Talk" button
+            const talkBtn = document.querySelector('.talk-btn');
+            talkBtn.addEventListener('click', function() {
+                alert('Thank you for your interest! A member of our team will contact you shortly.');
+            });
+        });
+    </script>
+</body>
+</html>
