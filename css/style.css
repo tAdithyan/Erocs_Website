@@ -1901,6 +1901,15 @@ input:focus, textarea:focus {
     flex: 100%;
     max-width: 80%;
   }
+  .marquee-inner p {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #B4EDE6;
+    font-family: Arial, sans-serif;
+    display: flex;
+    gap: 1rem;
+}
 }
 
 
