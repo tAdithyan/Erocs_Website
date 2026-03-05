@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="404 - Page Not Found | EROCS Robotics">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./image/finallogo__1_-removebg.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>404 - Intelligence Not Found | EROCS</title>
+    <style>
+        .error-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+            color: #fff;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-container {
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .error-image {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 20px rgba(180, 237, 230, 0.3));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #B4EDE6, #222);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .error-message {
+            font-size: 1.5rem;
+            color: #B4EDE6;
+            margin: 1rem 0 2rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .error-description {
+            color: #888;
+            margin-bottom: 3rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .back-home {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            border: 2px solid #B4EDE6;
+            color: #B4EDE6;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .back-home:hover {
+            background: #B4EDE6;
+            color: #000;
+            box-shadow: 0 0 30px rgba(180, 237, 230, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* Decorative elements */
+        .decor {
+            position: absolute;
+            background: #B4EDE6;
+            filter: blur(80px);
+            opacity: 0.1;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .decor-1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+        }
+
+        .decor-2 {
+            width: 400px;
+            height: 400px;
+            bottom: -150px;
+            right: -150px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <main class="error-section">
+        <div class="decor decor-1"></div>
+        <div class="decor decor-2"></div>
+
+        <div class="error-container" data-aos="zoom-in">
+            <img src="./image/404-robot.png" alt="Lost Robot" class="error-image">
+            <h1 class="error-code">404</h1>
+            <p class="error-message">Intelligence Not Found</p>
+            <p class="error-description">
+                It seems our robotic scouts couldn't find the page you're looking for.
+                Even the most advanced systems encounter a void sometimes.
+            </p>
+            <!-- <a href="index.html" class="back-home">Return to Base</a> -->
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+
+</html>
